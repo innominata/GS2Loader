@@ -1,0 +1,8 @@
+**bin**
+**obj**
+*Directory.Build.props*
+**.idea**
+
+*.pdb
+obj/**
+obj/**

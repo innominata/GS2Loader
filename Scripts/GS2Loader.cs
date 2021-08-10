@@ -23,7 +23,7 @@ namespace GalacticScale
             //var _ = new Harmony("dsp.galactic-scale.loader");
             Logger = new ManualLogSource("GS2Loader");
             BepInEx.Logging.Logger.Sources.Add(Logger);
-            var workingDir = Assembly.GetExecutingAssembly().Location;
+            var workingDir = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
             Debug(workingDir);
             var configDir = Path.Combine(BepInEx.Paths.ConfigPath, "GalacticScale2");
             var genDir = Path.Combine(configDir, "Generators");
