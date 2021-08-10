@@ -24,13 +24,13 @@ namespace GalacticScale
             Logger = new ManualLogSource("GS2Loader");
             BepInEx.Logging.Logger.Sources.Add(Logger);
             var workingDir = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
-            Debug(workingDir);
+            // Debug(workingDir);
             var configDir = Path.Combine(BepInEx.Paths.ConfigPath, "GalacticScale2");
             var genDir = Path.Combine(configDir, "Generators");
             var themeDir = Path.Combine(configDir, "CustomThemes");
 
             foreach (var file in Directory.GetFiles(workingDir, "*.dll")) {
-                Debug($"Found {file}");
+                // Debug($"Found {file}");
                 if (new FileInfo(file).Name != "GS2Loader.dll")
                 {
                     var destination = Path.Combine(genDir, new FileInfo(file).Name);
@@ -42,9 +42,9 @@ namespace GalacticScale
             foreach (var file in Directory.GetFiles(workingDir, "*.json"))
             {
                 Debug($"Found {file}");
-                if (new FileInfo(file).Name != "mainfest.json")
+                if (new FileInfo(file).Name != "manifest.json")
                 {
-                    Debug($"{file} processing");
+                    // Debug($"{file} processing");
                     var destination = Path.Combine(themeDir, new FileInfo(file).Name);
                     if (File.Exists(destination)) File.Delete(destination);
                     File.Move(file, destination);
@@ -53,7 +53,7 @@ namespace GalacticScale
             }
             foreach (var dir in Directory.GetDirectories(workingDir))
             {
-                Debug($"Found {dir}");
+                // Debug($"Found {dir}");
                 var destination = Path.Combine(themeDir, new DirectoryInfo(dir).Name);
                 MoveDirectory(dir, destination);
                 Debug($"{destination} relocated");
