@@ -1,0 +1,9 @@
+﻿{
+  "name": "GS2Loader",
+  "version_number": "0.0.1",
+  "website_url": "https://github.com/innominata/GS2Loader",
+  "description": "Loader for Generators and Themes for Galactic Scale 2 Mod",
+  "dependencies": [
+    "xiaoye97-BepInEx-5.4.5"
+  ]
+}
